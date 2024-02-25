@@ -49,6 +49,15 @@ def negative_assert(name):
     assert kit_response.status_code == 400
 
 
+def negative_assert_name(kit_body):
+    # El valor de la cabecera se guarda en la variable current_auth_token
+    current_auth_token = get_new_user_token()
+    # El resultado de la solicitud para crear un nuevo kit de un usuario se guarda en la variable kit_response
+    kit_response = sender_stand_request.post_new_client_kit(kit_body, current_auth_token)
+    # Comprueba que el atributo code en el cuerpo de respuesta es 400
+    assert kit_response.status_code == 400
+
+
 # Prueba 1. Kit creado con éxito. El parámetro name contiene 1 caracter
 def test_create_kit_1_letter_in_name_get_success_response():
     # Comprueba la respuesta
@@ -93,16 +102,12 @@ def test_create_kit_allows_numbers_in_name_get_success_response():
 
 # Prueba 8. Error. Falta el parámetro name en la solicitud
 def test_create_kit_no_name_get_error_response():
-    # El valor de la cabecera se guarda en la variable current_auth_token
-    current_auth_token = get_new_user_token()
     # El diccionario con el cuerpo de la solicitud se copia del archivo "data" a la variable "kit_body"
     current_kit_body = data.kit_body.copy()
     # El parámetro name se elimina de la solicitud
     current_kit_body.pop("name")
-    # El resultado de la solicitud para crear un nuevo kit de un usuario se guarda en la variable kit_response
-    kit_response = sender_stand_request.post_new_client_kit(current_kit_body, current_auth_token)
-    # Comprueba que el atributo code en el cuerpo de respuesta es 400
-    assert kit_response.status_code == 400
+    # Comprueba la respuesta
+    negative_assert_name(current_kit_body)
 
 
 # Prueba 9. Error. El parámetro name en la solicitud es de distinto tipo (número)
