@@ -2,7 +2,7 @@
 
 ## Acerca del proyecto
 
-Este proyecto tiene como objetivo realizar pruebas para validar el comportamiento del parámetro `name` al crear un nuevo kit para un usuario específico.
+Este proyecto tiene como objetivo realizar pruebas para validar el comportamiento del parámetro `name` al crear un nuevo kit para un usuario específico, en la aplicación Urban Grocers.
 
 ## Tecnologías utilizadas
 
@@ -33,11 +33,10 @@ De igual modo, para la ejecución de pruebas con pytest:
 6. Ahora haz clic en el ícono de la flecha verde para iniciar la configuración y observa los resultados.
 
 ## Detalles de las pruebas
-Detalles de las Pruebas
-
+Las pruebas se centran en el archivo create_kit_name_kit_test.py. Para más detalles sobre el comportamiento de las pruebas, consulta el código fuente.
 ## Información Adicional
 Para obtener más detalles sobre el API utilizado en este proyecto, consulta la documentación en el siguiente enlace:
-https://cnt-028e521d-86ec-46e3-9b3d-4bd879e453eb.containerhub.tripleten-services.com/docs/
+https://cnt-ed4bdea2-c6a2-4606-a8fa-8ead548de500.containerhub.tripleten-services.com/docs/
 
 ## Desarrollador
 - Nombre: Ferdinan Rebaza
